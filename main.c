@@ -1,14 +1,16 @@
 #include "monty.h"
 
+early_free_struct efs;
+
 int main(int argc, char **argv)
 {
-	FILE *fp;
+	stack_t *head = NULL;
 
-	fp = monty_init(argc, argv[1]);
+	monty_init(argc, argv[1]);
 
-	read_file(fp);
+	read_file(&head);
 
-	monty_exit(fp);
+	monty_exit(&head);
 
 	return (EXIT_SUCCESS);
 }
