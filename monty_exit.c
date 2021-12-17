@@ -3,14 +3,13 @@
 
 /**
  * monty_exit - exits the monty interpeter
- * @fp: file pointer
+ * @stack: the stack
  * return: Void
  */
 
-void monty_exit(FILE *fp)
+void monty_exit(stack_t **stack)
 {
-	fclose(fp);
-	/*free stack when it exist */
+	early_free(stack);
 	exit(EXIT_SUCCESS);
 
 }
