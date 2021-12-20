@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add - Adds an element to the top of the stack, replacing head
+ * pchar - Adds an element to the top of the stack, replacing head
  * @stack: The head of the stack
  * @line_number: The line number of the monty file
  * Return: void
@@ -20,7 +20,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 
 	i = head->n;
-	if (i < 32 && i > 126)
+	if (!isascii(i))
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		early_free(stack);
