@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * div - Divides the second element by the top of the stack, replacing head
+ * _div - Divides the second element by the top of the stack, replacing head
  * @stack: The head of the stack
  * @line_number: The line number of the monty file
  * Return: void
  */
 
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack;
 	stack_t *oldhead = NULL;
