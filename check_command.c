@@ -19,6 +19,10 @@ void check_command(stack_t **stack, char *op, unsigned int line_num)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
+		{"mul", mul},
+		{"div", _div},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
@@ -28,7 +32,10 @@ void check_command(stack_t **stack, char *op, unsigned int line_num)
 			ops[i].f(stack, line_num);
 			return;
 		}
+	if (op[0] != '#')
+	{
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_num, op);
 	early_free(stack);
 	exit(EXIT_FAILURE);
+	}
 }
